@@ -37,23 +37,26 @@ class MyGUI:
         self.display_tables()
         
         # Create textbox for SQL query
+        self.query_label = tk.Label(root, text="Enter Query Here:")
+        self.query_label.pack()
         self.query_textbox = tk.Text(self.master)
         self.query_textbox.pack()
         # Create button to execute query
         self.execute_button = tk.Button(self.master, text="Execute", command=self.execute_query)
         self.execute_button.pack()
         
-        #exit button
-        self.exit_button = tk.Button(root, text="Exit", command=self.exit_app)
-        self.exit_button.pack()
-        
+     
         
         # Create the result_textbox
         self.result_label = tk.Label(root, text="Result:")
         self.result_label.pack()
         self.result_textbox = tk.Text(root, height=10, width=50)
         self.result_textbox.pack()
-
+        
+        #exit button
+        self.exit_button = tk.Button(root, text="Exit", command=self.exit_app)
+        self.exit_button.pack()
+        
     
     
     def drop_tables(self):
